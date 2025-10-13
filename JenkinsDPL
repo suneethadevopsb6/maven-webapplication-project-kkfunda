@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                notifyBuild('STARTED')
+               // notifyBuild('STARTED')
                 git branch: 'stag', url: 'https://github.com/suneethadevopsb6/maven-webapplication-project-kkfunda.git''
             }
         }
@@ -52,9 +52,9 @@ pipeline {
                 """
             }
         } //stage ending
-stage('amazon-UAT') {
+stage('bsnl-stag') {
             steps {
-               build job: 'amazon-QA' //  This is downstream
+               build job: 'bsnl-stag' //  This is downstream
             }
         }
     }
